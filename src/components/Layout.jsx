@@ -189,6 +189,30 @@ function Logo({ footer = false }) {
 }
 
 /* =========================================================
+   FOOTER LOGO
+========================================================= */
+function FooterLogo({ footer = false }) {
+  return (
+    <Link
+      to="/"
+      aria-label="Vedixa Technologies Home"
+      className="flex shrink-0 items-center"
+    >
+      <img
+        src="/assets/vedixa_dark_logo.png"
+        alt="Vedixa Technologies"
+        className={`
+          w-auto object-contain
+          transition-transform duration-300
+          hover:scale-[1.03]
+          ${footer ? "h-20" : "h-18"}
+        `}
+      />
+    </Link>
+  );
+}
+
+/* =========================================================
    DESKTOP NAV ITEM
 ========================================================= */
 
@@ -289,10 +313,12 @@ export default function Layout() {
   const location = useLocation();
 
   /* CLOSE MOBILE MENU ON ROUTE CHANGE */
-  useEffect(() => {
-    setMobileOpen(false);
-    setMobileServicesOpen(false);
-  }, [location.pathname]);
+ useEffect(() => {
+  setMobileOpen(false);
+  setMobileServicesOpen(false);
+
+  window.scrollTo(0, 0);
+}, [location.pathname]);
 
   /* HEADER SHADOW ON SCROLL */
   useEffect(() => {
@@ -489,7 +515,7 @@ export default function Layout() {
           <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.75fr_1fr_1fr_1.15fr]">
             {/* BRAND */}
             <div>
-              <Logo light />
+              <FooterLogo light />
 
               <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
                 We combine technology, intelligence and design to create
@@ -557,7 +583,7 @@ export default function Layout() {
 
               <div className="mt-5 grid gap-4">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+917081493932"
                   className="flex items-start gap-3 text-sm text-slate-400 transition hover:text-white"
                 >
                   <Phone
@@ -566,7 +592,7 @@ export default function Layout() {
                   />
 
                   <span>
-                    +91 98765 43210
+                    +91 70814 93932
 
                     <span className="mt-1 block text-xs text-slate-500">
                       Mon – Sat, 9:00 AM – 7:00 PM
@@ -595,7 +621,7 @@ export default function Layout() {
                   <span>
                     Vedixa Technologies
                     <br />
-                    Indore, Madhya Pradesh
+                    Lucknow, Uttar Pradesh
                     <br />
                     India
                   </span>

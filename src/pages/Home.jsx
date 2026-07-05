@@ -519,57 +519,84 @@ function Home() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="mx-auto max-w-7xl px-5 py-5 lg:px-8">
-        <div className="grid overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-5">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
+     {/* STATS */}
+<section className="mx-auto max-w-7xl px-4 py-6 sm:px-5 lg:px-8">
+  <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-5">
+    {stats.map((stat, index) => {
+      const Icon = stat.icon;
 
-            return (
-              <div
-                key={stat.label}
-                className="flex items-center justify-center gap-4 border-b border-slate-100 px-5 py-5 lg:border-b-0 lg:border-r"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
-                  <Icon size={23} className="text-blue-600" />
-                </div>
+      return (
+        <div
+          key={stat.label}
+          className={`
+            flex min-h-[120px]
+            flex-col items-center justify-center
+            gap-3 px-5 py-5 text-center
+            border-b border-slate-100
 
-                <div>
-                  <p className="text-2xl font-black text-blue-600">
-                    {stat.number}
-                  </p>
+            sm:flex-row
+            sm:justify-start
+            sm:text-left
+            sm:gap-4
+            sm:px-6
 
-                  <p className="text-xs text-slate-600">{stat.label}</p>
-                </div>
-              </div>
-            );
-          })}
+            lg:border-b-0
+            ${index !== stats.length - 1 ? "lg:border-r" : ""}
+          `}
+        >
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50">
+            <Icon
+              size={23}
+              strokeWidth={2}
+              className="text-blue-600"
+            />
+          </div>
+
+          <div className="min-w-0">
+            <p className="text-2xl font-black leading-none text-blue-600 md:text-3xl">
+              {stat.number}
+            </p>
+
+            <p className="mt-2 text-xs font-medium leading-5 text-slate-600 sm:text-sm">
+              {stat.label}
+            </p>
+          </div>
         </div>
-      </section>
+      );
+    })}
+  </div>
+</section>
 
-      {/* TECHNOLOGY */}
-      <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
-        <p className="mb-4 text-xs font-bold uppercase tracking-widest text-blue-600">
-          Technologies & Tools We Work With
-        </p>
+     {/* TECHNOLOGY */}
+<section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
+  <p className="mb-4 text-xs font-bold uppercase tracking-widest text-blue-600">
+    Technologies & Tools We Work With
+  </p>
 
-        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-white p-4">
-          {technologyStack.map((tech) => (
-            <div
-              key={tech}
-              className="flex min-w-[76px] flex-col items-center justify-center rounded-lg px-3 py-3 transition hover:bg-blue-50"
-            >
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
-                <Code2 size={20} />
-              </div>
-
-              <span className="text-center text-[11px] font-semibold">
-                {tech}
-              </span>
-            </div>
-          ))}
+  <div className="grid grid-cols-3 gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8">
+    {technologyStack.map((tech) => (
+      <div
+        key={tech}
+        className="
+          flex min-h-[96px]
+          flex-col items-center justify-center
+          rounded-xl px-3 py-3
+          text-center
+          transition duration-200
+          hover:bg-blue-50
+        "
+      >
+        <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
+          <Code2 size={20} />
         </div>
-      </section>
+
+        <span className="text-[11px] font-semibold leading-4 text-slate-700">
+          {tech}
+        </span>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* PROCESS */}
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">

@@ -480,31 +480,51 @@ function Portfolio() {
       </section>
 
       {/* STATS */}
-      <section className="mx-auto max-w-7xl px-5 py-6 lg:px-8">
-        <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white sm:grid-cols-2 lg:grid-cols-6">
-          {stats.map((stat) => {
-            const Icon = stat.icon;
+<section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
+  <div className="overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-slate-950 via-blue-950 to-blue-700 shadow-2xl shadow-blue-950/10">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      {stats.map((stat, index) => (
+        <div
+          key={stat.label}
+          className={`
+            relative
+            flex min-h-[140px]
+            flex-col items-center justify-center
+            px-5 py-6 text-center
+            text-white
 
-            return (
-              <div
-                key={stat.label}
-                className="flex items-center justify-center gap-3 border-b border-slate-100 p-5 lg:border-b-0 lg:border-r"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-blue-50">
-                  <Icon size={20} className="text-blue-600" />
-                </div>
+            border-b border-white/10
 
-                <div>
-                  <p className="text-xl font-black text-blue-600">
-                    {stat.number}
-                  </p>
-                  <p className="text-[11px] text-slate-500">{stat.label}</p>
-                </div>
-              </div>
-            );
-          })}
+            sm:min-h-[135px]
+
+            lg:border-b
+            lg:border-white/10
+
+            xl:border-b-0
+
+            ${index !== stats.length - 1 ? "xl:border-r xl:border-white/10" : ""}
+          `}
+        >
+          {/* DECORATIVE GLOW */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent opacity-0 transition duration-300 hover:opacity-100" />
+
+          {/* NUMBER */}
+          <p className="relative text-3xl font-black leading-none tracking-tight text-white md:text-4xl">
+            {stat.number}
+          </p>
+
+          {/* LABEL */}
+          <p className="relative mt-3 max-w-[150px] text-xs font-medium leading-5 text-blue-100 sm:text-sm">
+            {stat.label}
+          </p>
+
+          {/* BOTTOM ACCENT */}
+          <span className="relative mt-4 h-1 w-8 rounded-full bg-cyan-400" />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* TESTIMONIALS */}
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">

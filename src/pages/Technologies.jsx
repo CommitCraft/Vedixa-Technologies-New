@@ -548,25 +548,52 @@ function Technologies() {
       </section>
 
       {/* STATS */}
-      <section className="mx-auto max-w-7xl px-5 pb-10 lg:px-8">
-        <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white sm:grid-cols-2 lg:grid-cols-5">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex items-center justify-center gap-4 border-b border-slate-100 p-5 lg:border-b-0 lg:border-r"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
-                <ShieldCheck size={22} className="text-blue-600" />
-              </div>
+<section className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 lg:px-8">
+  <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-5">
+    {stats.map((stat, index) => (
+      <div
+        key={stat.label}
+        className={`
+          flex min-h-[120px]
+          flex-col items-center justify-center
+          gap-3 px-5 py-5 text-center
+          border-b border-slate-100
 
-              <div>
-                <p className="text-2xl font-black text-blue-600">{stat.number}</p>
-                <p className="text-xs text-slate-500">{stat.label}</p>
-              </div>
-            </div>
-          ))}
+          sm:min-h-[110px]
+          sm:flex-row
+          sm:justify-start
+          sm:gap-4
+          sm:px-6
+          sm:text-left
+
+          lg:min-h-[120px]
+          lg:border-b-0
+          ${index !== stats.length - 1 ? "lg:border-r" : ""}
+        `}
+      >
+        {/* ICON */}
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50">
+          <ShieldCheck
+            size={22}
+            strokeWidth={2}
+            className="text-blue-600"
+          />
         </div>
-      </section>
+
+        {/* CONTENT */}
+        <div className="min-w-0">
+          <p className="text-2xl font-black leading-none text-blue-600 md:text-3xl">
+            {stat.number}
+          </p>
+
+          <p className="mt-2 text-xs font-medium leading-5 text-slate-500 sm:text-sm">
+            {stat.label}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
     </main>
   );
 }
