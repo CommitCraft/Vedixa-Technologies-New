@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -11,9 +12,10 @@ import {
   Code2,
   Gem,
   Globe2,
+  House,
   Lightbulb,
-Link2,
-Mail,
+  Link2,
+  Mail,
   MonitorSmartphone,
   Rocket,
   ShieldCheck,
@@ -22,184 +24,30 @@ Mail,
   Users,
   Workflow,
 } from "lucide-react";
+import { aboutPageContent } from "../content/aboutData";
 
-const values = [
-  "Client Success",
-  "Innovation",
-  "Integrity",
-  "Collaboration",
-  "Excellence",
-];
+const { values, pillars, stats, leaders, journey, reasons, brands } = aboutPageContent;
 
-const pillars = [
-  {
-    icon: Code2,
-    title: "IT & Software Solutions",
-    description:
-      "Custom software, web & mobile apps, cloud, DevOps and digital transformation solutions that drive efficiency and growth.",
-    points: [
-      "Custom Software Development",
-      "Web & Mobile Application Development",
-      "Cloud & DevOps",
-      "Digital Transformation",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85",
-  },
-  {
-    icon: Bot,
-    title: "AI & Automation",
-    description:
-      "AI-powered products and automation solutions that streamline operations, reduce costs and unlock new opportunities.",
-    points: [
-      "AI/ML Solutions",
-      "Process Automation",
-      "Data Analytics & Insights",
-      "Intelligent Chatbots",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=85",
-  },
-  {
-    icon: Building2,
-    title: "Architecture & Interior Design",
-    description:
-      "Functional, sustainable and inspiring spaces designed with creativity, precision and purpose.",
-    points: [
-      "Architecture Design",
-      "Interior Design",
-      "3D Visualization",
-      "Project Execution",
-    ],
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
-  },
-];
-
-const stats = [
-  { number: "350+", label: "Projects Completed", icon: MonitorSmartphone },
-  { number: "250+", label: "Happy Clients", icon: Users },
-  { number: "8+", label: "Years Experience", icon: Sparkles },
-  { number: "60+", label: "Experts & Professionals", icon: Users },
-  { number: "98%", label: "Client Satisfaction", icon: ShieldCheck },
-];
-
-const leaders = [
-  {
-    name: "Rahul Mehta",
-    role: "Founder & CEO",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=85",
-  },
-  {
-    name: "Neha Sharma",
-    role: "Co-Founder & COO",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85",
-  },
-  {
-    name: "Arjun Patel",
-    role: "CTO",
-    image:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=600&q=85",
-  },
-  {
-    name: "Priya Nair",
-    role: "Head of Design",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=85",
-  },
-  {
-    name: "Vikram Singh",
-    role: "Head of Architecture",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85",
-  },
-];
-
-const journey = [
-  {
-    year: "2016",
-    title: "Founded",
-    text: "Vedixa Technologies was founded with a vision to deliver innovative solutions.",
-  },
-  {
-    year: "2017",
-    title: "First Major Projects",
-    text: "Delivered multiple software and design projects for global clients.",
-  },
-  {
-    year: "2019",
-    title: "AI & Automation",
-    text: "Expanded into AI, automation and cloud solutions.",
-  },
-  {
-    year: "2021",
-    title: "Architecture Division",
-    text: "Launched architecture and interior design practice.",
-  },
-  {
-    year: "2023",
-    title: "Global Expansion",
-    text: "Strengthened the team and served clients across multiple countries.",
-  },
-  {
-    year: "2025",
-    title: "The Future",
-    text: "Continuing to innovate, build and inspire worldwide.",
-  },
-];
-
-const reasons = [
-  {
-    icon: CircleCheck,
-    title: "End-to-End Solutions",
-    text: "From strategy to execution, we handle it all.",
-  },
-  {
-    icon: Users,
-    title: "Expert Team",
-    text: "Skilled professionals with deep industry expertise.",
-  },
-  {
-    icon: Workflow,
-    title: "Agile & Transparent",
-    text: "Flexible engagement and clear communication.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality & Security",
-    text: "Built with best practices and security in mind.",
-  },
-  {
-    icon: Rocket,
-    title: "On-Time Delivery",
-    text: "We value time and deliver on promises.",
-  },
-  {
-    icon: Target,
-    title: "Client-First Approach",
-    text: "Your success is at the heart of everything we do.",
-  },
-];
-
-const brands = [
-  "Microsoft",
-  "AWS",
-  "Google Cloud",
-  "Oracle",
-  "Adobe",
-  "Autodesk",
-  "HubSpot",
-  "SAP",
-];
+const iconMap = {
+  CircleCheck,
+  Users,
+  Workflow,
+  ShieldCheck,
+  Rocket,
+  Target,
+  Code2,
+  Bot,
+  Building2,
+  MonitorSmartphone,
+  Sparkles,
+};
 
 function About() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/30 to-slate-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-8 lg:py-14">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <div>
             <div className="mb-5 flex items-center gap-2 text-sm text-slate-500">
               <span className="font-semibold text-blue-600">Home</span>
@@ -235,7 +83,7 @@ function About() {
             </div>
           </div>
 
-          <div className="relative min-h-[380px] overflow-hidden rounded-3xl">
+          <div className="relative min-h-95 overflow-hidden rounded-3xl">
             <img
               src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1300&q=90"
               alt="Vedixa team collaboration"
@@ -267,7 +115,7 @@ function About() {
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=90"
             alt="Vedixa building"
-            className="h-full min-h-[320px] w-full rounded-2xl object-cover"
+            className="h-full min-h-80 w-full rounded-2xl object-cover"
           />
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6">
@@ -354,8 +202,7 @@ function About() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {pillars.map((pillar) => {
-            const Icon = pillar.icon;
-
+              const Icon = iconMap[pillar.icon] || ShieldCheck;
             return (
               <article
                 key={pillar.title}
@@ -404,13 +251,13 @@ function About() {
 <section className="mx-auto max-w-7xl px-4 py-6 sm:px-5 lg:px-8">
   <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-5">
     {stats.map((stat, index) => {
-      const Icon = stat.icon;
+      const Icon = iconMap[stat.icon] || ShieldCheck;
 
       return (
         <div
           key={stat.label}
           className={`
-            flex min-h-[120px]
+            flex min-h-30
             flex-col items-center justify-center
             gap-3 px-5 py-5 text-center
             border-b border-slate-100
@@ -508,7 +355,7 @@ function About() {
         </p>
 
         <div className="relative mt-10">
-          <div className="absolute left-0 right-0 top-3 hidden h-[2px] bg-blue-200 lg:block" />
+          <div className="absolute left-0 right-0 top-3 hidden h-0.5 bg-blue-200 lg:block" />
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {journey.map((item) => (
@@ -540,7 +387,7 @@ function About() {
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
           {reasons.map((reason) => {
-            const Icon = reason.icon;
+            const Icon = iconMap[reason.icon] || ShieldCheck;
 
             return (
               <article
@@ -582,7 +429,7 @@ function About() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
+        <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
           <div className="relative z-10 mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-black md:text-4xl">
               Let's Build Something Extraordinary Together
@@ -607,6 +454,39 @@ function About() {
 
           <Building2 className="absolute -bottom-8 -left-3 h-48 w-48 text-white/10" />
           <Cloud className="absolute -bottom-8 right-3 h-48 w-48 text-white/10" />
+        </div>
+      </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              Ready to build something exceptional?
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              Let&apos;s turn your vision into a high-impact digital product, a smarter space, or a future-ready experience.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                Get Started
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                See Our Work
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
         </div>
       </section>
     </main>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -12,6 +13,7 @@ import {
   Database,
   Gauge,
   GitBranch,
+  House,
   Layers3,
   LineChart,
   Lock,
@@ -26,167 +28,17 @@ import {
   Workflow,
   Wrench,
 } from "lucide-react";
+import { technologiesPageContent } from "../content/technologiesData";
 
-const heroFeatures = [
-  {
-    title: "Modern & Future-Ready",
-    text: "Latest frameworks and platforms",
-  },
-  {
-    title: "Secure & Reliable",
-    text: "Built with security, quality & compliance",
-  },
-  {
-    title: "Scalable by Design",
-    text: "Cloud-native, modular & performance-driven",
-  },
-  {
-    title: "Innovation at Core",
-    text: "AI, automation & data driving outcomes",
-  },
-];
-
-const stackGroups = [
-  {
-    title: "Frontend",
-    icon: MonitorSmartphone,
-    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js"],
-  },
-  {
-    title: "Backend",
-    icon: Server,
-    items: ["Node.js", "PHP", "Laravel", "Python"],
-  },
-  {
-    title: "Mobile",
-    icon: Smartphone,
-    items: ["Flutter", "React Native", "Android", "iOS"],
-  },
-  {
-    title: "Databases",
-    icon: Database,
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
-  },
-  {
-    title: "Cloud & DevOps",
-    icon: Cloud,
-    items: ["AWS", "Docker", "Git", "CI/CD"],
-  },
-  {
-    title: "UI/UX & Product Tools",
-    icon: Palette,
-    items: ["Design Systems", "Analytics", "Prototyping", "User Research"],
-  },
-  {
-    title: "AI & Data Stack",
-    icon: Bot,
-    items: ["Automation", "Machine Learning", "Data Analytics", "LLM & GenAI"],
-  },
-  {
-    title: "Architecture Software Tools",
-    icon: Building2,
-    items: ["AutoCAD", "SketchUp", "Revit", "3ds Max", "Lumion"],
-  },
-];
-
-const architectureSteps = [
-  {
-    title: "Discover & Requirements",
-    icon: Users,
-  },
-  {
-    title: "Design & Architecture",
-    icon: Layers3,
-  },
-  {
-    title: "Develop & Integrate",
-    icon: Code2,
-  },
-  {
-    title: "Test & Validate",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Deploy & Release",
-    icon: Rocket,
-  },
-  {
-    title: "Monitor & Optimize",
-    icon: Settings,
-  },
-];
-
-const qualityCards = [
-  {
-    title: "Secure by Design",
-    text: "Security best practices, code scanning, role-based access and data protection.",
-    icon: Lock,
-  },
-  {
-    title: "Scalable & Resilient",
-    text: "Cloud-native architecture, modular services and high availability patterns.",
-    icon: Cloud,
-  },
-  {
-    title: "High Performance",
-    text: "Optimized code, caching, monitoring and best-in-class performance.",
-    icon: Gauge,
-  },
-  {
-    title: "Maintainable Code",
-    text: "Clean code, reusable modules, documentation and continuous improvement.",
-    icon: Code2,
-  },
-];
-
-const stackChoicePoints = [
-  "Business goals & long-term vision",
-  "Performance, scalability & reliability needs",
-  "Security, compliance & data considerations",
-  "Team expertise & ecosystem maturity",
-  "Total cost of ownership & future adaptability",
-];
-
-const lifecycleTools = [
-  {
-    title: "Plan & Manage",
-    icon: Briefcase,
-    items: ["Jira", "Confluence", "Notion"],
-  },
-  {
-    title: "Design & Prototype",
-    icon: Palette,
-    items: ["Figma", "Miro", "Zeplin"],
-  },
-  {
-    title: "Develop & Code",
-    icon: Code2,
-    items: ["VS Code", "GitHub", "GitLab"],
-  },
-  {
-    title: "Test & QA",
-    icon: ShieldCheck,
-    items: ["Selenium", "Postman", "Jest"],
-  },
-  {
-    title: "Deploy & DevOps",
-    icon: Cloud,
-    items: ["Docker", "Kubernetes", "GitHub Actions"],
-  },
-  {
-    title: "Monitor & Support",
-    icon: LineChart,
-    items: ["Datadog", "Sentry", "Slack"],
-  },
-];
-
-const stats = [
-  { number: "350+", label: "Projects Completed" },
-  { number: "250+", label: "Happy Clients" },
-  { number: "8+", label: "Years Experience" },
-  { number: "60+", label: "Expert Professionals" },
-  { number: "98%", label: "Client Satisfaction" },
-];
+const {
+  heroFeatures,
+  stackGroups,
+  architectureSteps,
+  qualityCards,
+  stackChoicePoints,
+  lifecycleTools,
+  stats,
+} = technologiesPageContent;
 
 function SectionTitle({ number, title, description, action }) {
   return (
@@ -227,8 +79,8 @@ function Technologies() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/40 to-slate-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-8 lg:py-14">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <div>
             <h1 className="text-4xl font-black leading-tight tracking-tight text-slate-950 md:text-5xl">
               Technologies We Use to
@@ -271,8 +123,8 @@ function Technologies() {
             </div>
           </div>
 
-          <div className="relative min-h-[420px] overflow-hidden rounded-3xl">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100" />
+          <div className="relative min-h-105 overflow-hidden rounded-3xl">
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-blue-50 to-blue-100" />
 
             <div className="absolute right-0 top-6 w-[78%] overflow-hidden rounded-3xl border border-white/70 bg-white p-3 shadow-2xl">
               <img
@@ -467,7 +319,7 @@ function Technologies() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 p-6">
+            <div className="mt-6 rounded-2xl bg-linear-to-br from-blue-50 to-blue-100 p-6">
               <div className="mx-auto flex h-48 max-w-xs items-center justify-center">
                 <div className="relative h-36 w-36">
                   <div className="absolute inset-0 rounded-3xl bg-white shadow-xl" />
@@ -520,7 +372,7 @@ function Technologies() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-8 pt-4 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
+        <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
           <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-black md:text-4xl">
@@ -554,19 +406,19 @@ function Technologies() {
       <div
         key={stat.label}
         className={`
-          flex min-h-[120px]
+          flex min-h-30
           flex-col items-center justify-center
           gap-3 px-5 py-5 text-center
           border-b border-slate-100
 
-          sm:min-h-[110px]
+          sm:min-h-27.5
           sm:flex-row
           sm:justify-start
           sm:gap-4
           sm:px-6
           sm:text-left
 
-          lg:min-h-[120px]
+          lg:min-h-30
           lg:border-b-0
           ${index !== stats.length - 1 ? "lg:border-r" : ""}
         `}
@@ -594,6 +446,39 @@ function Technologies() {
     ))}
   </div>
 </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              Powering your next product with the right stack
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              We pair modern engineering, cloud architecture, and thoughtful design to build reliable and scalable solutions.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                Talk to Our Team
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                See Case Studies
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
+        </div>
+      </section>
     </main>
   );
 }

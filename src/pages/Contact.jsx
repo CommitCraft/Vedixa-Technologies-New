@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -8,9 +9,11 @@ import {
   Clock3,
   Code2,
   Handshake,
+  House,
   Mail,
   MapPin,
   MessageCircle,
+  MonitorSmartphone,
   Navigation,
   Phone,
   ShieldCheck,
@@ -18,85 +21,9 @@ import {
   User,
   Users,
 } from "lucide-react";
+import { contactPageContent } from "../content/contactData";
 
-const helpOptions = [
-  {
-    title: "Software Development",
-    text: "Custom web, mobile and enterprise software tailored to your business.",
-    icon: Code2,
-  },
-  {
-    title: "AI Automation",
-    text: "Automate workflows, integrate AI solutions and improve operational efficiency.",
-    icon: Bot,
-  },
-  {
-    title: "Architecture & Interior",
-    text: "Innovative architectural designs and inspiring interior spaces.",
-    icon: Building2,
-  },
-  {
-    title: "Partnership",
-    text: "Explore partnerships, alliances and business collaboration opportunities.",
-    icon: Handshake,
-  },
-  {
-    title: "Careers",
-    text: "Join our team of innovators and help build the future with us.",
-    icon: BriefcaseBusiness,
-  },
-];
-
-const supportPoints = [
-  {
-    title: "24-Hour Response",
-    text: "We respond to all inquiries within 24 business hours.",
-    icon: Timer,
-  },
-  {
-    title: "Project Consultation",
-    text: "Free consultation to understand your goals and challenges.",
-    icon: MessageCircle,
-  },
-  {
-    title: "Confidential & Secure",
-    text: "Your ideas and information are always protected.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "On-Time & Reliable",
-    text: "We respect deadlines and commit to quality.",
-    icon: Clock3,
-  },
-];
-
-const socialChannels = [
-  {
-    title: "LinkedIn",
-    handle: "/vedixa-technologies",
-    symbol: "in",
-  },
-  {
-    title: "Facebook",
-    handle: "/vedixatechnologies",
-    symbol: "f",
-  },
-  {
-    title: "Instagram",
-    handle: "@vedixa.technologies",
-    symbol: "◎",
-  },
-  {
-    title: "X (Twitter)",
-    handle: "@vedixa_tech",
-    symbol: "X",
-  },
-  {
-    title: "YouTube",
-    handle: "/VedixaTechnologies",
-    symbol: "▶",
-  },
-];
+const { helpOptions, supportPoints, socialChannels } = contactPageContent;
 
 function Contact() {
   const [selectedHelp, setSelectedHelp] = useState("");
@@ -135,8 +62,8 @@ function Contact() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/40 to-slate-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.78fr_1.22fr] lg:px-8 lg:py-14">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <div>
             <p className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-blue-600">
               Contact Us
@@ -176,8 +103,8 @@ function Contact() {
           </div>
 
           {/* HERO VISUAL */}
-          <div className="relative min-h-[430px] overflow-hidden rounded-3xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100" />
+          <div className="relative min-h-107.5 overflow-hidden rounded-3xl">
+            <div className="absolute inset-0 bg-linear-to-br from-blue-50 to-blue-100" />
 
             <div className="absolute left-[10%] top-7 w-[66%] overflow-hidden rounded-2xl border border-white bg-white p-3 shadow-2xl">
               <div className="rounded-xl bg-slate-50 p-5">
@@ -219,7 +146,7 @@ function Contact() {
             <div className="absolute bottom-5 right-8 w-[42%] rounded-2xl border border-white bg-white p-3 shadow-xl">
               <div className="relative h-44 overflow-hidden rounded-xl bg-blue-50">
                 <div className="absolute inset-0 opacity-30">
-                  <div className="h-full w-full bg-[linear-gradient(to_right,#3b82f6_1px,transparent_1px),linear-gradient(to_bottom,#3b82f6_1px,transparent_1px)] bg-[size:28px_28px]" />
+                  <div className="h-full w-full bg-[linear-gradient(to_right,#3b82f6_1px,transparent_1px),linear-gradient(to_bottom,#3b82f6_1px,transparent_1px)] bg-size-[28px_28px]" />
                 </div>
 
                 <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg">
@@ -584,14 +511,14 @@ function Contact() {
               </button>
             </div>
 
-            <div className="relative min-h-[330px] overflow-hidden bg-blue-50">
+            <div className="relative min-h-82.5 overflow-hidden bg-blue-50">
               <div className="absolute inset-0 opacity-40">
-                <div className="h-full w-full bg-[linear-gradient(to_right,#60a5fa_1px,transparent_1px),linear-gradient(to_bottom,#60a5fa_1px,transparent_1px)] bg-[size:42px_42px]" />
+                <div className="h-full w-full bg-[linear-gradient(to_right,#60a5fa_1px,transparent_1px),linear-gradient(to_bottom,#60a5fa_1px,transparent_1px)] bg-size-[42px_42px]" />
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/50 via-transparent to-blue-100/50" />
+              <div className="absolute inset-0 bg-linear-to-br from-cyan-50/50 via-transparent to-blue-100/50" />
 
-              <div className="absolute left-1/2 top-1/2 w-[330px] max-w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white bg-white p-4 shadow-2xl">
+              <div className="absolute left-1/2 top-1/2 w-82.5 max-w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white bg-white p-4 shadow-2xl">
                 <div className="flex gap-4">
                   <img
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80"
@@ -695,7 +622,7 @@ function Contact() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-4 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
+        <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
           <Building2 className="absolute -bottom-10 -left-4 h-48 w-48 text-white/10" />
           <MonitorGraphic />
 
@@ -728,6 +655,39 @@ function Contact() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              We&apos;re ready when you are
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              Share your goals and we&apos;ll help you shape a practical, beautiful, and impactful next step.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                Start the Conversation
+              </Link>
+
+              <Link
+                to="/services"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                Explore Services
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
         </div>
       </section>
     </main>

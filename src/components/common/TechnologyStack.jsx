@@ -15,7 +15,7 @@ function TechnologyStack({
           {items.map((tech) => (
             <div
               key={tech}
-              className="flex min-h-[96px] w-[105px] flex-col items-center justify-center rounded-xl px-3 py-3 text-center transition duration-200 hover:bg-blue-50 sm:w-[115px] lg:w-[120px]"
+              className="flex min-h-24 w-26.25 flex-col items-center justify-center rounded-xl px-3 py-3 text-center transition duration-200 hover:bg-blue-50 sm:w-28.75 lg:w-30"
             >
               <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 text-blue-600">
                 <Code2 size={20} />

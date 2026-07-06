@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Building2,
@@ -14,6 +15,7 @@ import {
   Leaf,
   Lightbulb,
   Map,
+  MonitorSmartphone,
   Palette,
   Ruler,
   ShieldCheck,
@@ -24,285 +26,42 @@ import {
   Waves,
   Wrench,
 } from "lucide-react";
+import { architecturePageContent } from "../content/architectureData";
 
-const heroServices = [
-  "Residential Architecture",
-  "Commercial Architecture",
-  "Interior Design",
-  "Sustainable & Future-Ready",
-  "Space Planning & Layouts",
-  "3D Visualization & Rendering",
-  "End-to-End Consultation",
-  "Timely Delivery & Quality",
-];
+const {
+  hero,
+  sectionTitles,
+  actions,
+  philosophyImage,
+  approachImage,
+  heroServices,
+  heroFeatures,
+  services,
+  projects,
+  philosophy,
+  approach,
+  process,
+  sustainability,
+  testimonials,
+  stats,
+} = architecturePageContent;
 
-const heroFeatures = [
-  {
-    icon: Palette,
-    title: "Creative by Design",
-    text: "Beautiful, purposeful spaces",
-  },
-  {
-    icon: Users,
-    title: "People-Centric",
-    text: "Designed around how you live & work",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainable Thinking",
-    text: "Eco-friendly, future-ready solutions",
-  },
-  {
-    icon: Gem,
-    title: "Expert Craftsmanship",
-    text: "Precision, quality & attention to detail",
-  },
-  {
-    icon: Clock3,
-    title: "On Time, On Budget",
-    text: "Reliable delivery you can trust",
-  },
-];
-
-const services = [
-  {
-    title: "Residential Architecture",
-    text: "Custom homes and villas that blend comfort, style and individuality.",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Commercial Architecture",
-    text: "Workspaces, retail and hospitality spaces designed for performance and impact.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Interior Design",
-    text: "Elegant, functional interiors that reflect your personality and brand.",
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Space Planning",
-    text: "Smart layouts that optimize space, flow and user experience.",
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "2D Drafting",
-    text: "Precise floor plans, technical drawings and documentation.",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "3D Visualization / Rendering",
-    text: "Photorealistic renders and walkthroughs that bring ideas to life.",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Sustainable Design",
-    text: "Energy-efficient, eco-friendly designs for a better tomorrow.",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Turnkey Consultation",
-    text: "From concept to completion, we manage everything end-to-end.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const projects = [
-  {
-    title: "Modern Villa Residence",
-    type: "Luxury Villa",
-    location: "Hyderabad",
-    size: "4,300 sq.ft.",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Azure Corporate Hub",
-    type: "Commercial Building",
-    location: "Bengaluru",
-    size: "66,000 sq.ft.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Serene Interior Retreat",
-    type: "Interior Design",
-    location: "Pune",
-    size: "3BHK",
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Urban Retail Pavilion",
-    type: "Retail Space",
-    location: "Mumbai",
-    size: "12,000 sq.ft.",
-    image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Greenfield Workspace",
-    type: "Office Interior",
-    location: "Gurugram",
-    size: "28,000 sq.ft.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Hillside Weekend Home",
-    type: "Vacation Home",
-    location: "Lonavala",
-    size: "2,800 sq.ft.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const philosophy = [
-  {
-    icon: Users,
-    title: "Human-Centric",
-    text: "Designing around people, their needs and experiences.",
-  },
-  {
-    icon: Compass,
-    title: "Contextual & Timeless",
-    text: "Spaces that respond to their environment and stand the test of time.",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainable & Responsible",
-    text: "Smart design choices that reduce impact and add long-term value.",
-  },
-];
-
-const approach = [
-  {
-    icon: Lightbulb,
-    title: "Listen",
-    text: "We understand your vision, lifestyle and goals.",
-  },
-  {
-    icon: DraftingCompass,
-    title: "Design",
-    text: "We create concepts that balance beauty, function and feasibility.",
-  },
-  {
-    icon: Hammer,
-    title: "Deliver",
-    text: "We execute with precision, transparency and care.",
-  },
-];
-
-const process = [
-  {
-    number: "01",
-    title: "Discover",
-    text: "Understanding your vision, needs and site potential.",
-  },
-  {
-    number: "02",
-    title: "Concept & Planning",
-    text: "Concept design, space planning and feasibility study.",
-  },
-  {
-    number: "03",
-    title: "Design Development",
-    text: "Detailed layouts, 3D visuals and material exploration.",
-  },
-  {
-    number: "04",
-    title: "Documentation",
-    text: "Technical drawings, approvals and cost estimation.",
-  },
-  {
-    number: "05",
-    title: "Execution",
-    text: "Construction with quality, safety and timely progress.",
-  },
-  {
-    number: "06",
-    title: "Handover",
-    text: "Final handover with walkthrough and post-completion support.",
-  },
-];
-
-const sustainability = [
-  {
-    icon: Leaf,
-    title: "Sustainable Materials",
-    text: "Eco-friendly materials that are durable and responsibly sourced.",
-  },
-  {
-    icon: Sparkles,
-    title: "Energy Efficiency",
-    text: "Smart systems that reduce energy use and running costs.",
-  },
-  {
-    icon: Eye,
-    title: "Natural Light & Ventilation",
-    text: "Designing for daylight, fresh air and healthier living.",
-  },
-  {
-    icon: Waves,
-    title: "Water Conservation",
-    text: "Efficient fixtures and systems that conserve every drop.",
-  },
-  {
-    icon: TreePine,
-    title: "Green Spaces",
-    text: "Integrating nature into design for well-being and balance.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Low Environmental Impact",
-    text: "Thoughtful choices that minimize waste and carbon footprint.",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Vedixa transformed our ideas into a stunning home. Their design sense, attention to detail and professionalism exceeded our expectations.",
-    name: "Rekha & Neha Sharma",
-    role: "Homeowners, Hyderabad",
-  },
-  {
-    quote:
-      "Our office space was delivered on time and looks incredible. The team understood our brand and built a space that inspires.",
-    name: "Arjun Mehta",
-    role: "Director, TechNova Solutions",
-  },
-  {
-    quote:
-      "The interiors are elegant, functional and exactly what we envisioned. Highly recommended.",
-    name: "Priya Iyer",
-    role: "Interior Design Client, Pune",
-  },
-  {
-    quote:
-      "From planning to execution, everything was seamless. Great communication and outstanding quality.",
-    name: "Karan Malhotra",
-    role: "Developer, Mumbai",
-  },
-];
-
-const stats = [
-  { number: "120+", label: "Projects Completed" },
-  { number: "85+", label: "Happy Clients" },
-  { number: "2.5M+", label: "Sq.ft. Designed" },
-  { number: "50+", label: "Architecture Experts" },
-  { number: "98%", label: "Client Satisfaction" },
-  { number: "10+", label: "Years of Experience" },
-];
+const iconMap = {
+  Palette,
+  Users,
+  Leaf,
+  Gem,
+  Clock3,
+  Lightbulb,
+  DraftingCompass,
+  Hammer,
+  Compass,
+  Sparkles,
+  Eye,
+  Waves,
+  TreePine,
+  ShieldCheck,
+};
 
 function SectionTitle({
   title,
@@ -348,23 +107,18 @@ function Architecture() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/30 to-slate-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.78fr_1.22fr] lg:px-8 lg:py-14">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <div>
             <h1 className="text-4xl font-black leading-tight tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
-              Architecture &
+              {hero.title}
               <br />
-              Interior Design That
-              <span className="block text-blue-600">
-                Shapes Better Experiences
-              </span>
+              {hero.titleAccent}
+              <span className="block text-blue-600">{hero.titleStrong}</span>
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-              We design thoughtful spaces that blend aesthetics,
-              functionality and sustainability. From elegant residences to
-              iconic commercial spaces and inspiring interiors—our
-              architectural solutions bring your vision to life.
+              {hero.description}
             </p>
 
             <div className="mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
@@ -381,24 +135,24 @@ function Architecture() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700">
-                Explore Our Projects
+                {hero.primaryCta}
                 <ArrowRight size={17} />
               </button>
 
               <button className="rounded-lg border border-blue-300 bg-white px-6 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-50">
-                Book a Consultation
+                {hero.secondaryCta}
               </button>
             </div>
           </div>
 
-          <div className="relative min-h-[470px] overflow-hidden rounded-3xl">
+          <div className="relative min-h-117.5 overflow-hidden rounded-3xl">
             <img
-              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=90"
-              alt="Modern architecture"
+              src={hero.image.src}
+              alt={hero.image.alt}
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-white/20 via-transparent to-transparent" />
 
             <div className="absolute bottom-5 right-5 rounded-2xl border border-white/60 bg-white/90 p-4 shadow-xl backdrop-blur">
               <DraftingCompass size={38} className="text-blue-600" />
@@ -411,7 +165,7 @@ function Architecture() {
       <section className="mx-auto max-w-7xl px-5 py-5 lg:px-8">
         <div className="grid overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm sm:grid-cols-2 lg:grid-cols-5">
           {heroFeatures.map((feature) => {
-            const Icon = feature.icon;
+            const Icon = iconMap[feature.icon] || ShieldCheck;
 
             return (
               <div
@@ -437,8 +191,8 @@ function Architecture() {
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <SectionTitle
-          title="Our Architecture & Design Services"
-          description="End-to-end solutions that transform ideas into inspiring spaces."
+          title={sectionTitles.services.title}
+          description={sectionTitles.services.description}
           centered
         />
 
@@ -462,7 +216,7 @@ function Architecture() {
                 </p>
 
                 <button className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600">
-                  Learn More
+                  {actions.service}
                   <ArrowRight size={15} />
                 </button>
               </div>
@@ -474,8 +228,8 @@ function Architecture() {
       {/* PROJECTS */}
       <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <SectionTitle
-          title="Featured Architecture Projects"
-          action="View All Projects"
+          title={sectionTitles.projects.title}
+          action={sectionTitles.projects.action}
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
@@ -513,17 +267,15 @@ function Architecture() {
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div className="grid gap-5 p-6 md:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <h2 className="text-2xl font-black">Our Design Philosophy</h2>
+              <h2 className="text-2xl font-black">{sectionTitles.philosophy.title}</h2>
 
               <p className="mt-3 text-sm leading-6 text-slate-500">
-                We believe great design is more than how a space looks—it is how
-                it makes you feel and function better.
+                {sectionTitles.philosophy.description}
               </p>
 
               <div className="mt-5 space-y-4">
                 {philosophy.map((item) => {
-                  const Icon = item.icon;
-
+              const Icon = iconMap[item.icon] || ShieldCheck;
                   return (
                     <div key={item.title} className="flex gap-3">
                       <Icon
@@ -543,9 +295,9 @@ function Architecture() {
             </div>
 
             <img
-              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
-              alt="Interior design philosophy"
-              className="h-full min-h-[340px] w-full rounded-xl object-cover"
+              src={philosophyImage.src}
+              alt={philosophyImage.alt}
+              className="h-full min-h-85 w-full rounded-xl object-cover"
             />
           </div>
         </div>
@@ -553,12 +305,11 @@ function Architecture() {
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
           <div className="grid gap-5 p-6 md:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <h2 className="text-2xl font-black">Our Approach</h2>
+              <h2 className="text-2xl font-black">{sectionTitles.approach.title}</h2>
 
               <div className="mt-5 space-y-4">
                 {approach.map((item) => {
-                  const Icon = item.icon;
-
+              const Icon = iconMap[item.icon] || ShieldCheck;
                   return (
                     <div key={item.title} className="flex gap-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50">
@@ -578,9 +329,9 @@ function Architecture() {
             </div>
 
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85"
-              alt="Architecture design approach"
-              className="h-full min-h-[340px] w-full rounded-xl object-cover"
+              src={approachImage.src}
+              alt={approachImage.alt}
+              className="h-full min-h-85 w-full rounded-xl object-cover"
             />
           </div>
         </div>
@@ -589,8 +340,8 @@ function Architecture() {
       {/* PROCESS */}
       <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <SectionTitle
-          title="Our Design & Build Process"
-          description="A clear, collaborative process that ensures clarity at every step."
+          title={sectionTitles.process.title}
+          description={sectionTitles.process.description}
           centered
         />
 
@@ -622,13 +373,13 @@ function Architecture() {
       <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
           <SectionTitle
-            title="Built With Quality. Designed For Tomorrow."
+            title={sectionTitles.sustainability.title}
             centered
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {sustainability.map((item) => {
-              const Icon = item.icon;
+              const Icon = iconMap[item.icon] || ShieldCheck;
 
               return (
                 <article
@@ -654,8 +405,8 @@ function Architecture() {
       {/* TESTIMONIALS */}
       <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <SectionTitle
-          title="What Our Clients Say"
-          action="View All Testimonials"
+          title={sectionTitles.testimonials.title}
+          action={sectionTitles.testimonials.action}
         />
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -691,21 +442,21 @@ function Architecture() {
 
       {/* STATS */}
 <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
-  <div className="overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-slate-950 via-blue-950 to-blue-700 shadow-2xl shadow-blue-950/10">
+  <div className="overflow-hidden rounded-3xl border border-blue-100 bg-linear-to-br from-slate-950 via-blue-950 to-blue-700 shadow-2xl shadow-blue-950/10">
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {stats.map((stat, index) => (
         <div
           key={stat.label}
           className={`
             relative
-            flex min-h-[140px]
+            flex min-h-35
             flex-col items-center justify-center
             px-5 py-6 text-center
             text-white
 
             border-b border-white/10
 
-            sm:min-h-[135px]
+            sm:min-h-33.75
 
             lg:border-b
             lg:border-white/10
@@ -716,7 +467,7 @@ function Architecture() {
           `}
         >
           {/* DECORATIVE GLOW */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent opacity-0 transition duration-300 hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-white/[0.04] to-transparent opacity-0 transition duration-300 hover:opacity-100" />
 
           {/* NUMBER */}
           <p className="relative text-3xl font-black leading-none tracking-tight text-white md:text-4xl">
@@ -737,7 +488,7 @@ function Architecture() {
 </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500">
+      <section className="bg-linear-to-r from-blue-700 via-blue-600 to-blue-500">
         <div className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
           <div className="relative overflow-hidden rounded-2xl px-6 py-10 text-white md:px-10">
             <House className="absolute -bottom-12 -left-5 h-52 w-52 text-white/10" />
@@ -745,26 +496,58 @@ function Architecture() {
 
             <div className="relative z-10 mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-black md:text-4xl">
-                Ready to Design Your Dream Space?
+                {sectionTitles.cta.title}
               </h2>
 
               <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
-                Let&apos;s create spaces that inspire, perform and last a
-                lifetime.
+                {sectionTitles.cta.description}
               </p>
 
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700">
-                  Book a Consultation
+                  {sectionTitles.cta.primaryCta}
                 </button>
 
                 <button className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold">
-                  Explore Projects
+                  {sectionTitles.cta.secondaryCta}
                   <ArrowRight size={16} />
                 </button>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              {sectionTitles.secondaryCta.title}
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              {sectionTitles.secondaryCta.description}
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                {sectionTitles.secondaryCta.primaryCta}
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                {sectionTitles.secondaryCta.secondaryCta}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
         </div>
       </section>
     </main>

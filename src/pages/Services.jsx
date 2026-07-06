@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -7,6 +8,7 @@ import {
   Cloud,
   Code2,
   Globe2,
+  House,
   LayoutDashboard,
   Palette,
   PanelsTopLeft,
@@ -16,244 +18,33 @@ import {
   Smartphone,
   Sparkles,
   Users,
+  MonitorSmartphone,
 } from "lucide-react";
+import { servicesPageContent } from "../content/servicesData";
 
-const heroHighlights = [
-  {
-    title: "End-to-End Delivery",
-    text: "From idea to impact",
-  },
-  {
-    title: "Agile & Transparent",
-    text: "Collaborative, every step",
-  },
-  {
-    title: "Future-Ready Solutions",
-    text: "Scalable, secure, intelligent",
-  },
-  {
-    title: "Quality & Reliability",
-    text: "Built for performance",
-  },
-];
+const {
+  heroHighlights,
+  serviceCategories,
+  comprehensiveServices,
+  advantages,
+  processSteps,
+  industryImpact,
+  faqs,
+} = servicesPageContent;
 
-const serviceCategories = [
-  {
-    icon: Code2,
-    title: "IT & Software Services",
-    description:
-      "Custom software, web & mobile apps, cloud platforms and business systems that help companies grow faster.",
-    points: ["Modern technologies", "Scalable & secure", "Performance-driven"],
-    cta: "Explore IT Services",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    icon: Bot,
-    title: "AI & Automation Services",
-    description:
-      "Intelligent automation, process optimization and AI-powered systems to improve productivity and decisions.",
-    points: ["AI & ML solutions", "Process automation", "Data-driven insights"],
-    cta: "Explore AI Services",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    icon: Building2,
-    title: "Architecture & Design Services",
-    description:
-      "Architecture, interior design and visualization services tailored to functional and inspiring spaces.",
-    points: ["Concept to completion", "Sustainable design", "Modern aesthetics"],
-    cta: "Explore Design Services",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const comprehensiveServices = [
-  {
-    icon: Globe2,
-    title: "Web Development",
-    text: "Fast, responsive websites built with modern tech.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    text: "Native and cross-platform apps users love.",
-  },
-  {
-    icon: Code2,
-    title: "Custom Software Development",
-    text: "Tailored systems that solve your unique challenges.",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    text: "User-centered designs that delight and convert.",
-  },
-  {
-    icon: Cloud,
-    title: "SaaS Product Development",
-    text: "Scalable SaaS platforms from idea to launch.",
-  },
-  {
-    icon: PanelsTopLeft,
-    title: "Enterprise Solutions",
-    text: "ERP, CRM and business systems built to scale.",
-  },
-  {
-    icon: Bot,
-    title: "AI Automation",
-    text: "Intelligent automation that reduces cost and effort.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Data Analytics",
-    text: "Turn data into insights with dashboards and reporting.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps",
-    text: "Cloud-native solutions with CI/CD and infrastructure automation.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Solutions",
-    text: "Powerful stores and marketplaces that sell better.",
-  },
-  {
-    icon: Building2,
-    title: "Residential Architecture",
-    text: "Custom homes that reflect your lifestyle and needs.",
-  },
-  {
-    icon: Building2,
-    title: "Commercial Architecture",
-    text: "Innovative spaces for business and growth.",
-  },
-  {
-    icon: Palette,
-    title: "Interior Design",
-    text: "Beautiful interiors that blend function and aesthetics.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "2D/3D Planning",
-    text: "Accurate plans and visualizations for better approvals.",
-  },
-  {
-    icon: Sparkles,
-    title: "Space Planning",
-    text: "Optimized layouts that improve comfort and productivity.",
-  },
-  {
-    icon: Building2,
-    title: "3D Visualization",
-    text: "Realistic 3D renders that bring ideas to life.",
-  },
-];
-
-const advantages = [
-  {
-    title: "End-to-End Expertise",
-    text: "Digital, AI & Architecture under one roof.",
-  },
-  {
-    title: "Tailored Solutions",
-    text: "Custom-built for your unique business needs.",
-  },
-  {
-    title: "On-Time Delivery",
-    text: "Agile process with on-time assurance.",
-  },
-  {
-    title: "Scalable & Secure",
-    text: "Built for performance and future growth.",
-  },
-  {
-    title: "Transparent Communication",
-    text: "Clear updates at every step of the journey.",
-  },
-  {
-    title: "Dedicated Support",
-    text: "Reliable support before, during and after delivery.",
-  },
-];
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Discover",
-    text: "We understand your business, goals and challenges.",
-  },
-  {
-    number: "02",
-    title: "Strategy & Plan",
-    text: "We define the right solution and roadmap.",
-  },
-  {
-    number: "03",
-    title: "Design & Develop",
-    text: "We build with best practices, modern tech and clean design.",
-  },
-  {
-    number: "04",
-    title: "Test & Validate",
-    text: "Rigorous testing ensures quality, security and performance.",
-  },
-  {
-    number: "05",
-    title: "Deploy & Launch",
-    text: "Smooth deployment with zero disruption to your operations.",
-  },
-  {
-    number: "06",
-    title: "Support & Optimize",
-    text: "Continuous support and improvements for long-term success.",
-  },
-];
-
-const industryImpact = [
-  {
-    title: "FinTech Platform",
-    text: "Modern banking platform with AI insights & automation.",
-    metric: "↑ 65%",
-    subMetric: "Operational Efficiency",
-    image:
-      "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "E-commerce Marketplace",
-    text: "Scalable multi-vendor platform with seamless experience.",
-    metric: "↑ 120%",
-    subMetric: "Sales Growth",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Corporate Office",
-    text: "Smart workspace designed for collaboration & productivity.",
-    metric: "↑ 40%",
-    subMetric: "Space Utilization",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Luxury Residence",
-    text: "Bespoke interior with timeless design & premium finishes.",
-    metric: "Client",
-    subMetric: "Delight",
-    image:
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const faqs = [
-  "What types of projects do you handle?",
-  "How do you ensure project quality?",
-  "What is your typical project timeline?",
-  "Do you provide post-launch support?",
-];
+const iconMap = {
+  Globe2,
+  Smartphone,
+  Code2,
+  Palette,
+  Cloud,
+  PanelsTopLeft,
+  Bot,
+  LayoutDashboard,
+  ShoppingCart,
+  Building2,
+  Sparkles,
+};
 
 function SectionTitle({ eyebrow, title, description, action }) {
   return (
@@ -288,7 +79,7 @@ function Services() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/40 to-slate-50">
+      <section className="border-b border-slate-100 bg-linear-to-br from-white via-blue-50/40 to-slate-50">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.82fr_1.18fr] lg:px-8 lg:py-14">
           <div>
             <div className="mb-5 inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-blue-600">
@@ -319,7 +110,7 @@ function Services() {
             </div>
           </div>
 
-          <div className="relative min-h-[380px] overflow-hidden rounded-3xl">
+          <div className="relative min-h-95 overflow-hidden rounded-3xl">
             <div className="absolute right-0 top-0 h-full w-[72%] overflow-hidden rounded-3xl">
               <img
                 src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=90"
@@ -374,7 +165,7 @@ function Services() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {serviceCategories.map((item) => {
-            const Icon = item.icon;
+            const Icon = iconMap[item.icon] || ShieldCheck;
 
             return (
               <article
@@ -425,8 +216,7 @@ function Services() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {comprehensiveServices.map((service) => {
-            const Icon = service.icon;
-
+              const Icon = iconMap[service.icon] || ShieldCheck;
             return (
               <article
                 key={service.title}
@@ -536,7 +326,7 @@ function Services() {
                 className="h-64 w-full object-cover"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                 <h3 className="text-lg font-bold">{item.title}</h3>
@@ -623,7 +413,7 @@ function Services() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
+        <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
           <div className="relative z-10 mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-black md:text-4xl">
               Ready to Build What&apos;s Next?
@@ -648,6 +438,39 @@ function Services() {
 
           <Building2 className="absolute -bottom-8 -left-3 h-48 w-48 text-white/10" />
           <Cloud className="absolute -bottom-8 right-3 h-48 w-48 text-white/10" />
+        </div>
+      </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              Let&apos;s create your next solution
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              From software and automation to architecture and design, we combine strategy, delivery, and care in one place.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                Schedule a Call
+              </Link>
+
+              <Link
+                to="/about"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                Why Vedixa
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
         </div>
       </section>
     </main>

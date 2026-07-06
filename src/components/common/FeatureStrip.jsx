@@ -9,7 +9,7 @@ function FeatureStrip({ items }) {
             <div
               key={item.title}
               className={`
-                flex min-h-[105px]
+                flex min-h-26.25
                 items-center gap-3
                 border-b border-slate-100
                 p-4

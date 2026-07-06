@@ -44,7 +44,7 @@ function Home() {
           HERO
       ===================================================== */}
 
-      <section className="relative overflow-hidden border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/50 to-blue-100/60">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           {/* CONTENT */}
 
@@ -102,7 +102,7 @@ function Home() {
 
           {/* HERO IMAGES */}
 
-          <div className="relative min-h-[360px] sm:min-h-[420px] lg:min-h-[480px]">
+          <div className="relative min-h-90 sm:min-h-105 lg:min-h-120">
             {/* ARCHITECTURE IMAGE */}
 
             <div className="absolute right-0 top-0 h-full w-[82%] overflow-hidden rounded-3xl sm:w-[74%]">
@@ -137,7 +137,7 @@ function Home() {
       ===================================================== */}
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
-        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-r from-white to-blue-50/70 p-5 md:p-7">
+        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-linear-to-r from-white to-blue-50/70 p-5 md:p-7">
           <SectionTitle
             title="IT & Software Solutions"
             action="View All Services"
@@ -154,7 +154,7 @@ function Home() {
 
             {/* SERVICES VISUAL */}
 
-            <div className="relative min-h-[360px] overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 p-4 sm:min-h-[430px] sm:p-5">
+            <div className="relative min-h-90 overflow-hidden rounded-2xl bg-linear-to-br from-blue-50 to-blue-100 p-4 sm:min-h-107.5 sm:p-5">
               <img
                 src={softwareServicesVisual.image}
                 alt="Software dashboard interface"
@@ -253,7 +253,7 @@ function Home() {
 
         {/* INTEGRATED APPROACH */}
 
-        <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-5 md:p-6">
+        <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-linear-to-br from-white to-slate-50 p-5 md:p-6">
           <SectionTitle title="Integrated Design & Build Approach" />
 
           {/* PROCESS FLOW */}

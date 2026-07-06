@@ -13,7 +13,7 @@ function StatsSection({
 
           ${
             dark
-              ? "border-white/10 bg-gradient-to-br from-slate-950 via-blue-950 to-blue-700"
+              ? "border-white/10 bg-linear-to-br from-slate-950 via-blue-950 to-blue-700"
               : "border-slate-200 bg-white shadow-sm"
           }
         `}
@@ -25,7 +25,7 @@ function StatsSection({
             <div
               key={stat.label}
               className={`
-                flex min-h-[120px]
+                flex min-h-30
                 flex-col items-center justify-center
                 gap-3
                 border-b

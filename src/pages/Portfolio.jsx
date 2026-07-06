@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -19,194 +20,17 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import { portfolioPageContent } from "../content/portfolioData";
 
-const filters = [
-  "All Projects",
-  "Software Products",
-  "Web & Mobile Apps",
-  "AI Automation",
-  "Architecture",
-  "Interior Design",
-];
-
-const featuredCases = [
-  {
-    category: "SaaS Platform",
-    title: "ERP Dashboard Platform",
-    description:
-      "A comprehensive ERP solution that streamlined operations and improved decision-making with real-time analytics.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
-    stats: [
-      ["45%", "Process Efficiency"],
-      ["32%", "Cost Reduction"],
-      ["2.8x", "Faster Reporting"],
-    ],
-  },
-  {
-    category: "Mobile Banking App",
-    title: "Nexa Mobile Banking",
-    description:
-      "Secure, intuitive mobile banking experience with smart features and AI-driven insights.",
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85",
-    stats: [
-      ["60%", "User Engagement"],
-      ["35%", "Transactions"],
-      ["4.9★", "App Store Rating"],
-    ],
-  },
-  {
-    category: "Residential Architecture",
-    title: "Modern Villa Residence",
-    description:
-      "A contemporary villa that blends aesthetics with functionality and sustainable design principles.",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85",
-    stats: [
-      ["6,200 sq.ft.", "Built-up Area"],
-      ["4 BHK", "Configuration"],
-      ["9 Months", "Project Duration"],
-    ],
-  },
-];
-
-const projects = [
-  {
-    category: "SaaS Product",
-    title: "Analytics Platform",
-    description:
-      "Advanced analytics & dashboards for data-driven decisions.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "Web Application",
-    title: "E-commerce Admin",
-    description:
-      "Complete admin panel to manage products, orders and users.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "AI Automation",
-    title: "AI Automation Dashboard",
-    description:
-      "Automate workflows and boost productivity with AI.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "Mobile App",
-    title: "Health & Fitness App",
-    description:
-      "Track workouts, nutrition and health with smart insights.",
-    image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "Cloud Solution",
-    title: "Cloud Infrastructure",
-    description:
-      "Scalable cloud architecture for high availability and performance.",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "Corporate Architecture",
-    title: "Corporate Office",
-    description:
-      "Modern workspace designed for productivity and collaboration.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "Retail Architecture",
-    title: "Retail Showroom",
-    description:
-      "Premium retail space design that enhances customer experience.",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    category: "Interior Design",
-    title: "Luxury Apartment",
-    description:
-      "Elegant interiors with perfect balance of comfort and style.",
-    image:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const stats = [
-  {
-    number: "250+",
-    label: "Projects Delivered",
-    icon: LayoutDashboard,
-  },
-  {
-    number: "98%",
-    label: "On-time Delivery",
-    icon: ShieldCheck,
-  },
-  {
-    number: "40%",
-    label: "Avg. Efficiency Gain",
-    icon: TrendingUp,
-  },
-  {
-    number: "60%",
-    label: "Automation Time Saved",
-    icon: Timer,
-  },
-  {
-    number: "4.9/5",
-    label: "Avg. Client Rating",
-    icon: Star,
-  },
-  {
-    number: "30+",
-    label: "Industries Served",
-    icon: Users,
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Vedixa transformed our vision into a powerful platform. Their team is professional, responsive and truly invested in our success.",
-    name: "Sarah Johnson",
-    role: "CEO, NexaFin",
-  },
-  {
-    quote:
-      "The AI automation solution they built saved us hundreds of hours every month. Exceptional work and great support.",
-    name: "Michael Brown",
-    role: "COO, LogiSmart",
-  },
-  {
-    quote:
-      "Their architectural design exceeded our expectations. The attention to detail and creativity is unmatched.",
-    name: "Priya Mehta",
-    role: "Director, Urban Space",
-  },
-];
-
-const highlights = [
-  "Understand client goals & challenges",
-  "Design tailored solutions",
-  "Agile development & execution",
-  "Test, optimize & deliver",
-  "Ongoing support & growth partnership",
-];
-
-const outcomes = [
-  "45% increase in operational efficiency",
-  "60% faster decision-making",
-  "35% reduction in manual work",
-  "Higher accuracy & data visibility",
-  "Scalable for future growth",
-];
+const {
+  filters,
+  featuredCases,
+  projects,
+  stats,
+  testimonials,
+  highlights,
+  outcomes,
+} = portfolioPageContent;
 
 function SectionTitle({
   title,
@@ -275,8 +99,8 @@ function Portfolio() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/30 to-slate-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.75fr_1.25fr] lg:px-8 lg:py-14">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <div>
             <h1 className="text-4xl font-black leading-tight tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
               Our Portfolio
@@ -336,7 +160,7 @@ function Portfolio() {
             </div>
           </div>
 
-          <div className="relative min-h-[440px] overflow-hidden rounded-3xl">
+          <div className="relative min-h-110 overflow-hidden rounded-3xl">
             <div className="absolute right-0 top-0 h-full w-[45%] overflow-hidden rounded-3xl">
               <img
                 src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=90"
@@ -481,21 +305,21 @@ function Portfolio() {
 
       {/* STATS */}
 <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
-  <div className="overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-slate-950 via-blue-950 to-blue-700 shadow-2xl shadow-blue-950/10">
+  <div className="overflow-hidden rounded-3xl border border-blue-100 bg-linear-to-br from-slate-950 via-blue-950 to-blue-700 shadow-2xl shadow-blue-950/10">
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {stats.map((stat, index) => (
         <div
           key={stat.label}
           className={`
             relative
-            flex min-h-[140px]
+            flex min-h-35
             flex-col items-center justify-center
             px-5 py-6 text-center
             text-white
 
             border-b border-white/10
 
-            sm:min-h-[135px]
+            sm:min-h-33.75
 
             lg:border-b
             lg:border-white/10
@@ -506,7 +330,7 @@ function Portfolio() {
           `}
         >
           {/* DECORATIVE GLOW */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.04] to-transparent opacity-0 transition duration-300 hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-white/[0.04] to-transparent opacity-0 transition duration-300 hover:opacity-100" />
 
           {/* NUMBER */}
           <p className="relative text-3xl font-black leading-none tracking-tight text-white md:text-4xl">
@@ -649,7 +473,7 @@ function Portfolio() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-4 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
+        <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
           <House className="absolute -bottom-10 -left-4 h-48 w-48 text-white/10" />
           <MonitorSmartphone className="absolute -bottom-8 right-4 h-44 w-44 text-white/10" />
 
@@ -674,6 +498,39 @@ function Portfolio() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              Ready to build something remarkable?
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              We turn bold ideas into digital platforms, intelligent products, and inspiring spaces that deliver long-term value.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                Start Your Project
+              </Link>
+
+              <Link
+                to="/services"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                View Services
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
         </div>
       </section>
     </main>

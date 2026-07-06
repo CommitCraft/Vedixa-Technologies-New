@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
@@ -11,6 +12,7 @@ import {
   House,
   Landmark,
   LineChart,
+  MonitorSmartphone,
   PackageSearch,
   Rocket,
   ShieldCheck,
@@ -19,198 +21,35 @@ import {
   Truck,
   Users,
 } from "lucide-react";
+import { industriesPageContent } from "../content/industriesData";
 
-const heroFeatures = [
-  {
-    title: "Deep Industry Expertise",
-    text: "Solutions tailored to real business challenges",
-  },
-  {
-    title: "Business-Centric Approach",
-    text: "Technology aligned with business goals",
-  },
-  {
-    title: "Scalable & Future-Ready",
-    text: "Built for performance and long-term growth",
-  },
-  {
-    title: "Delivered with Precision",
-    text: "Quality, reliability and measurable outcomes",
-  },
-];
+const {
+  hero,
+  sectionTitles,
+  actions,
+  heroFeatures,
+  industries,
+  capabilities,
+  useCases,
+  reasons,
+  outcomes,
+  brands,
+} = industriesPageContent;
 
-const industries = [
-  {
-    title: "Real Estate",
-    text: "Digital solutions for property development, sales, leasing and facility management.",
-    icon: Building2,
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Retail",
-    text: "Omnichannel experiences, inventory intelligence and customer-centric platforms.",
-    icon: Store,
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Manufacturing",
-    text: "Smart manufacturing, IoT, predictive maintenance and supply chain optimization.",
-    icon: Factory,
-    image:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Healthcare",
-    text: "Patient-centric platforms, health data solutions and operational automation.",
-    icon: HeartPulse,
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Education",
-    text: "Digital learning platforms, LMS, student engagement and institution management.",
-    icon: GraduationCap,
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Hospitality",
-    text: "Guest experience platforms, booking systems and hotel operations automation.",
-    icon: House,
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Logistics",
-    text: "Route optimization, real-time tracking and end-to-end supply chain visibility.",
-    icon: Truck,
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Finance",
-    text: "Secure fintech solutions, risk analytics, compliance and customer onboarding.",
-    icon: Landmark,
-    image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    title: "Startups / SMEs",
-    text: "Scalable MVPs, product engineering and digital transformation for growth.",
-    icon: Rocket,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
-const capabilities = [
-  {
-    title: "Custom Software Solutions",
-    text: "Business applications, portals, enterprise systems and customer platforms built for unique workflows.",
-    icon: Cloud,
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Intelligent Automation & AI",
-    text: "Automate operations, leverage AI for insights and improve decision-making.",
-    icon: Bot,
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Architecture & Design Solutions",
-    text: "Functional, sustainable and future-ready architecture and interior design.",
-    icon: Building2,
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85",
-  },
-];
-
-const useCases = [
-  {
-    title: "Real Estate CRM & Portals",
-    text: "Lead management, property listing and sales automation.",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Retail Omnichannel Platform",
-    text: "Unified commerce, loyalty and personalized customer journeys.",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Smart Manufacturing Suite",
-    text: "Production monitoring, IoT and predictive maintenance.",
-    image:
-      "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Hospital Management System",
-    text: "Appointments, EMR, billing and patient engagement.",
-    image:
-      "https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Logistics Control Tower",
-    text: "Real-time tracking, analytics and exception management.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=85",
-  },
-  {
-    title: "Fintech Analytics Platform",
-    text: "Risk scoring, fraud detection and compliance automation.",
-    image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=85",
-  },
-];
-
-const reasons = [
-  "We understand industry workflows, regulations and customer expectations.",
-  "Faster time-to-value with proven frameworks and reusable components.",
-  "Solutions designed for scale, security and long-term impact.",
-  "Continuous innovation to keep you ahead of the curve.",
-];
-
-const outcomes = [
-  {
-    value: "30–50%",
-    label: "Increase in Operational Efficiency",
-  },
-  {
-    value: "40% Faster",
-    label: "Time-to-Market for Digital Initiatives",
-  },
-  {
-    value: "2–3x",
-    label: "Improvement in Digital Adoption",
-  },
-  {
-    value: "25–40%",
-    label: "Boost in Customer Experience Scores",
-  },
-];
-
-const brands = [
-  "DLF",
-  "Godrej Properties",
-  "Adani",
-  "Max Healthcare",
-  "Titan",
-  "TVS",
-  "Federal Bank",
-  "Microsoft",
-  "AWS",
-  "Google Cloud",
-  "Azure",
-  "Salesforce",
-  "SAP",
-  "Oracle",
-  "Stripe",
-];
+const iconMap = {
+  Building2,
+  Store,
+  Factory,
+  HeartPulse,
+  GraduationCap,
+  House,
+  Truck,
+  Landmark,
+  Rocket,
+  Cloud,
+  Bot,
+  ShieldCheck,
+};
 
 function SectionTitle({ title, description, action }) {
   return (
@@ -241,17 +80,16 @@ function Industries() {
   return (
     <main className="bg-white text-slate-900">
       {/* HERO */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-white via-blue-50/40 to-slate-50">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-10 lg:grid-cols-[0.75fr_1.25fr] lg:px-8 lg:py-14">
+      <section className="relative overflow-hidden border-b border-slate-100 bg-linear-to-br from-white via-blue-50/50 to-blue-100/60">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 sm:px-5 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-16">
           <div>
             <h1 className="text-4xl font-black leading-tight tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
-              Industry-Focused
-              <span className="block text-blue-600">Solutions</span>
+              {hero.titleLine1}
+              <span className="block text-blue-600">{hero.titleLine2}</span>
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-slate-700">
-              We deliver tailored software, AI, automation and architecture
-              solutions that solve real business challenges across industries.
+              {hero.description}
             </p>
 
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -273,56 +111,22 @@ function Industries() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <button className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700">
-                Explore Solutions
+                {hero.primaryCta}
                 <ArrowRight size={17} />
               </button>
 
               <button className="rounded-lg border border-blue-300 bg-white px-6 py-3 text-sm font-semibold text-blue-700 hover:bg-blue-50">
-                Book a Consultation
+                {hero.secondaryCta}
               </button>
             </div>
           </div>
 
-          <div className="relative min-h-[440px] overflow-hidden rounded-3xl">
-            <div className="absolute left-0 top-0 h-[58%] w-[52%] overflow-hidden rounded-3xl">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=90"
-                alt="Commercial industry"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="absolute right-0 top-0 h-[52%] w-[45%] overflow-hidden rounded-3xl">
-              <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=90"
-                alt="Corporate industry"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="absolute bottom-0 right-0 h-[50%] w-[47%] overflow-hidden rounded-3xl">
-              <img
-                src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=90"
-                alt="Manufacturing industry"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="absolute bottom-7 left-[18%] w-[52%] overflow-hidden rounded-2xl border border-white bg-white p-3 shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=90"
-                alt="Industry dashboard"
-                className="h-64 w-full rounded-xl object-cover"
-              />
-            </div>
-
-            <div className="absolute bottom-3 left-4 w-[20%] overflow-hidden rounded-2xl border border-white bg-white p-2 shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=500&q=85"
-                alt="Mobile industry app"
-                className="h-44 w-full rounded-xl object-cover"
-              />
-            </div>
+          <div className="relative min-h-110 overflow-hidden rounded-3xl">
+            {hero.images.map((image) => (
+              <div key={image.alt} className={image.wrapperClass}>
+                <img src={image.src} alt={image.alt} className={image.imageClass} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -331,13 +135,13 @@ function Industries() {
       <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
           <SectionTitle
-            title="Industries We Serve"
-            description="Solutions tailored to the unique needs and opportunities in every sector."
+            title={sectionTitles.industries.title}
+            description={sectionTitles.industries.description}
           />
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {industries.map((industry) => {
-              const Icon = industry.icon;
+              const Icon = iconMap[industry.icon] || ShieldCheck;
 
               return (
                 <article
@@ -364,7 +168,7 @@ function Industries() {
                     </p>
 
                     <button className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600">
-                      Explore
+                      {actions.industry}
                       <ArrowRight size={15} />
                     </button>
                   </div>
@@ -379,13 +183,13 @@ function Industries() {
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
           <SectionTitle
-            title="How Vedixa Serves Each Industry"
-            description="We combine technology, design and domain knowledge to deliver impact."
+            title={sectionTitles.capabilities.title}
+            description={sectionTitles.capabilities.description}
           />
 
           <div className="grid gap-5 lg:grid-cols-3">
             {capabilities.map((item) => {
-              const Icon = item.icon;
+              const Icon = iconMap[item.icon] || ShieldCheck;
 
               return (
                 <article
@@ -412,7 +216,7 @@ function Industries() {
                     </p>
 
                     <button className="mt-4 flex items-center gap-2 text-sm font-semibold text-blue-600">
-                      Learn More
+                      {actions.capability}
                       <ArrowRight size={15} />
                     </button>
                   </div>
@@ -427,8 +231,8 @@ function Industries() {
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
           <SectionTitle
-            title="Tailored Solutions & Use Cases"
-            description="Real-world applications that drive measurable business outcomes."
+            title={sectionTitles.useCases.title}
+            description={sectionTitles.useCases.description}
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
@@ -451,7 +255,7 @@ function Industries() {
                   </p>
 
                   <button className="mt-4 flex items-center gap-2 text-xs font-semibold text-blue-600">
-                    View Case
+                    {actions.useCase}
                     <ArrowRight size={14} />
                   </button>
                 </div>
@@ -464,7 +268,7 @@ function Industries() {
       {/* EXPERTISE + OUTCOMES */}
       <section className="mx-auto grid max-w-7xl gap-5 px-5 py-8 lg:grid-cols-2 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-black">Why Industry Expertise Matters</h2>
+          <h2 className="text-2xl font-black">{sectionTitles.expertise.title}</h2>
 
           <div className="mt-5 space-y-4">
             {reasons.map((item) => (
@@ -484,7 +288,7 @@ function Industries() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="text-2xl font-black">Measurable Outcomes We Deliver</h2>
+          <h2 className="text-2xl font-black">{sectionTitles.outcomes.title}</h2>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {outcomes.map((item) => (
@@ -511,8 +315,8 @@ function Industries() {
       <section className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
           <SectionTitle
-            title="Trusted by Clients Across Industries"
-            description="Building long-term partnerships with organizations that lead and inspire."
+            title={sectionTitles.brands.title}
+            description={sectionTitles.brands.description}
           />
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
@@ -530,31 +334,63 @@ function Industries() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-5 pb-10 pt-4 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
+        <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-700 via-blue-600 to-blue-500 px-6 py-10 text-white md:px-10">
           <House className="absolute -bottom-10 -left-4 h-48 w-48 text-white/10" />
           <PackageSearch className="absolute -bottom-8 right-5 h-44 w-44 text-white/10" />
 
           <div className="relative z-10 mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-black md:text-4xl">
-              Ready to Transform Your Industry?
+              {sectionTitles.cta.title}
             </h2>
 
             <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
-              Let&apos;s build future-ready solutions that drive growth,
-              efficiency and exceptional experiences.
+              {sectionTitles.cta.description}
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <button className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700">
-                Book a Consultation
+                {sectionTitles.cta.primaryCta}
               </button>
 
               <button className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold">
-                Explore Our Solutions
+                {sectionTitles.cta.secondaryCta}
                 <ArrowRight size={16} />
               </button>
             </div>
           </div>
+        </div>
+      </section>
+          <section className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-5 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-blue-800 via-blue-600 to-cyan-500 px-6 py-12 text-white md:px-10">
+          <div className="relative z-10 mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-black md:text-4xl">
+              {sectionTitles.secondaryCta.title}
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-blue-100">
+              {sectionTitles.secondaryCta.description}
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link
+                to="/contact"
+                className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-50"
+              >
+                {sectionTitles.secondaryCta.primaryCta}
+              </Link>
+
+              <Link
+                to="/services"
+                className="flex items-center gap-2 rounded-lg border border-white/40 px-6 py-3 text-sm font-bold transition hover:bg-white/10"
+              >
+                {sectionTitles.secondaryCta.secondaryCta}
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+
+          <House className="absolute -bottom-10 -left-3 h-44 w-44 text-white/10" />
+          <MonitorSmartphone className="absolute -bottom-8 right-3 h-44 w-44 text-white/10" />
         </div>
       </section>
     </main>
