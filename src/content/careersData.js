@@ -1,204 +1,381 @@
-export const careersPageContent = {
-  heroHighlights: [
-    { title: "Innovative Projects", icon: "Lightbulb" },
-    { title: "Learning Culture", icon: "GraduationCap" },
-    { title: "Inclusive Workplace", icon: "Users" },
-    { title: "Real Impact", icon: "Target" },
-  ],
-  stats: [
-    { number: "350+", label: "Projects Delivered", icon: "BriefcaseBusiness" },
-    { number: "250+", label: "Happy Clients", icon: "Users" },
-    { number: "8+", label: "Years of Excellence", icon: "Trophy" },
-    { number: "60+", label: "Expert Professionals", icon: "Users" },
-    { number: "98%", label: "Client Satisfaction", icon: "ShieldCheck" },
-  ],
-  cultureValues: [
+import {
+  BriefcaseBusiness,
+  Code2,
+  GraduationCap,
+  HeartHandshake,
+  Laptop,
+  Lightbulb,
+  MonitorSmartphone,
+  Rocket,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Trophy,
+  Users,
+  Workflow,
+} from "lucide-react";
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+export const careersHero = {
+  title: "Build Your Career",
+  highlight: "with Vedixa",
+
+  description:
+    "Join a collaborative team of innovators, designers and builders working at the intersection of technology, architecture and design to create solutions that shape a better tomorrow.",
+
+  primaryCTA: {
+    label: "View Open Roles",
+    to: "#open-positions",
+  },
+
+  secondaryCTA: {
+    label: "Apply Now",
+    to: "/contact",
+  },
+
+  images: [
     {
-      title: "Collaborative",
-      text: "We win as a team. We share ideas, support each other and celebrate success together.",
-      icon: "Users",
+      src:
+        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85",
+      alt: "Vedixa workspace",
     },
     {
-      title: "Innovative",
-      text: "We embrace curiosity and experiment with new ideas to build better solutions.",
-      icon: "Lightbulb",
+      src:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85",
+      alt: "Team collaboration",
     },
     {
-      title: "Ownership",
-      text: "We take responsibility, deliver with commitment and go the extra mile for our clients.",
-      icon: "Target",
+      src:
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
+      alt: "Design discussion",
     },
     {
-      title: "Integrity",
-      text: "We are transparent, honest and ethical in every interaction and decision we make.",
-      icon: "ShieldCheck",
-    },
-    {
-      title: "Inclusivity",
-      text: "We value diverse perspectives and create a workplace where everyone belongs.",
-      icon: "HeartHandshake",
-    },
-    {
-      title: "Impact",
-      text: "We build solutions that make a difference for businesses and communities.",
-      icon: "Rocket",
-    },
-  ],
-  whyWorkWithUs: [
-    {
-      title: "Learning & Development",
-      text: "Access to training, courses, certifications and knowledge sharing sessions.",
-      icon: "GraduationCap",
-    },
-    {
-      title: "Career Growth",
-      text: "Clear career paths, mentorship and opportunities to lead and grow.",
-      icon: "Rocket",
-    },
-    {
-      title: "Flexible Environment",
-      text: "Hybrid work model and flexible hours for better work-life balance.",
-      icon: "Laptop",
-    },
-    {
-      title: "Innovation Driven",
-      text: "Work with cutting-edge technologies and creative minds on exciting ideas.",
-      icon: "Lightbulb",
-    },
-    {
-      title: "Impactful Projects",
-      text: "Build meaningful products and spaces that create real-world impact.",
-      icon: "Target",
-    },
-    {
-      title: "Wellness First",
-      text: "Health insurance, wellness programs and a supportive work environment.",
-      icon: "HeartHandshake",
+      src:
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85",
+      alt: "Architecture team",
     },
   ],
-  jobs: [
-    {
-      title: "UI/UX Designer",
-      type: "Full-time",
-      location: "Ahmedabad",
-      description:
-        "Design intuitive and delightful experiences for web and mobile products.",
-      icon: "MonitorSmartphone",
-    },
-    {
-      title: "Full Stack Developer",
-      type: "Full-time",
-      location: "Ahmedabad / Remote",
-      description:
-        "Build scalable web applications using modern technologies and best practices.",
-      icon: "Code2",
-    },
-    {
-      title: "Mobile App Developer",
-      type: "Full-time",
-      location: "Ahmedabad / Remote",
-      description:
-        "Create high-performance mobile apps for iOS and Android platforms.",
-      icon: "MonitorSmartphone",
-    },
-    {
-      title: "AI Engineer",
-      type: "Full-time",
-      location: "Ahmedabad / Remote",
-      description:
-        "Build intelligent solutions using machine learning, NLP and generative AI.",
-      icon: "Sparkles",
-    },
-    {
-      title: "Architect",
-      type: "Full-time",
-      location: "Ahmedabad",
-      description:
-        "Design functional, sustainable and inspiring architectural spaces.",
-      icon: "Building2",
-    },
-    {
-      title: "Interior Designer",
-      type: "Full-time",
-      location: "Ahmedabad",
-      description:
-        "Create aesthetically compelling interior spaces that enhance user experience.",
-      icon: "Building2",
-    },
-    {
-      title: "Project Coordinator",
-      type: "Full-time",
-      location: "Ahmedabad",
-      description:
-        "Coordinate projects, track progress and ensure successful delivery.",
-      icon: "Workflow",
-    },
+};
+
+
+/* =========================================================
+   HERO HIGHLIGHTS
+========================================================= */
+
+export const careerHighlights = [
+  {
+    icon: Lightbulb,
+    title: "Innovation",
+    text: "Create ideas that make an impact",
+  },
+  {
+    icon: Users,
+    title: "Collaboration",
+    text: "Grow with talented teams",
+  },
+  {
+    icon: Rocket,
+    title: "Growth",
+    text: "Learn and advance continuously",
+  },
+  {
+    icon: Trophy,
+    title: "Impact",
+    text: "Build meaningful solutions",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Culture",
+    text: "Work with trust and respect",
+  },
+];
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+export const careerStats = [
+  {
+    number: "60+",
+    label: "Team Members",
+    icon: Users,
+  },
+  {
+    number: "8+",
+    label: "Years of Growth",
+    icon: Rocket,
+  },
+  {
+    number: "350+",
+    label: "Projects Delivered",
+    icon: BriefcaseBusiness,
+  },
+  {
+    number: "15+",
+    label: "Technologies",
+    icon: Code2,
+  },
+  {
+    number: "98%",
+    label: "Team Satisfaction",
+    icon: HeartHandshake,
+  },
+  {
+    number: "20+",
+    label: "Open Opportunities",
+    icon: Target,
+  },
+];
+
+
+/* =========================================================
+   CULTURE VALUES
+========================================================= */
+
+export const cultureValues = [
+  {
+    icon: HeartHandshake,
+    title: "Respect",
+    text: "We value every voice, idea and contribution.",
+  },
+  {
+    icon: Users,
+    title: "Collaboration",
+    text: "We achieve more by working together.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation",
+    text: "We encourage bold ideas and experimentation.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Integrity",
+    text: "We act honestly and take responsibility.",
+  },
+  {
+    icon: Sparkles,
+    title: "Creativity",
+    text: "We combine technology with design thinking.",
+  },
+  {
+    icon: Rocket,
+    title: "Growth",
+    text: "We continuously learn and improve.",
+  },
+];
+
+
+/* =========================================================
+   WHY WORK WITH US
+========================================================= */
+
+export const whyWorkWithUs = [
+  {
+    icon: GraduationCap,
+    title: "Continuous Learning",
+    text: "Training, mentoring and hands-on learning opportunities.",
+  },
+  {
+    icon: Workflow,
+    title: "Flexible Work",
+    text: "A healthy approach to collaboration and productivity.",
+  },
+  {
+    icon: Trophy,
+    title: "Recognition",
+    text: "Great work and contributions are valued and recognized.",
+  },
+  {
+    icon: Rocket,
+    title: "Career Growth",
+    text: "Clear opportunities to grow professionally.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Supportive Culture",
+    text: "Work with teams that help each other succeed.",
+  },
+  {
+    icon: MonitorSmartphone,
+    title: "Modern Projects",
+    text: "Build technology and design solutions across industries.",
+  },
+];
+
+
+/* =========================================================
+   OPEN POSITIONS
+========================================================= */
+
+export const jobs = [
+  {
+    icon: Code2,
+    title: "Frontend Developer",
+    type: "Full Time",
+    location: "Hybrid",
+    description:
+      "Build modern, responsive and scalable interfaces using React and modern frontend technologies.",
+  },
+  {
+    icon: Laptop,
+    title: "Backend Developer",
+    type: "Full Time",
+    location: "Hybrid",
+    description:
+      "Build secure APIs, scalable services and reliable backend systems.",
+  },
+  {
+    icon: Sparkles,
+    title: "UI/UX Designer",
+    type: "Full Time",
+    location: "On-site / Hybrid",
+    description:
+      "Create intuitive digital experiences, interfaces and product systems.",
+  },
+];
+
+
+/* =========================================================
+   HIRING PROCESS
+========================================================= */
+
+export const hiringSteps = [
+  {
+    number: "01",
+    title: "Apply",
+    description:
+      "Submit your profile and tell us about your experience.",
+  },
+  {
+    number: "02",
+    title: "Profile Review",
+    description:
+      "Our team evaluates your profile and relevant experience.",
+  },
+  {
+    number: "03",
+    title: "Technical Discussion",
+    description:
+      "A role-focused conversation and practical assessment.",
+  },
+  {
+    number: "04",
+    title: "Culture Discussion",
+    description:
+      "We discuss collaboration, goals and mutual expectations.",
+  },
+  {
+    number: "05",
+    title: "Welcome Aboard",
+    description:
+      "Receive your offer and begin your journey with Vedixa.",
+  },
+];
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+export const careerTestimonials = [
+  {
+    quote:
+      "Vedixa gives me the freedom to experiment, learn and contribute to meaningful projects.",
+    name: "Aarav Sharma",
+    role: "Software Engineer",
+  },
+  {
+    quote:
+      "The culture encourages collaboration and continuous learning.",
+    name: "Neha Verma",
+    role: "UI/UX Designer",
+  },
+  {
+    quote:
+      "I have had opportunities to work across challenging and exciting projects.",
+    name: "Rohan Mehta",
+    role: "Backend Developer",
+  },
+  {
+    quote:
+      "The team genuinely supports growth and new ideas.",
+    name: "Priya Nair",
+    role: "Product Designer",
+  },
+];
+
+
+/* =========================================================
+   LIFE AT VEDIXA
+========================================================= */
+
+export const lifeAtVedixa = [
+  "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=700&q=85",
+
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=85",
+
+  "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=85",
+
+  "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&q=85",
+
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=85",
+
+  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=700&q=85",
+];
+
+
+/* =========================================================
+   INTERNSHIPS
+========================================================= */
+
+export const internshipSection = {
+  title: "Internships & Fresher Opportunities",
+
+  description:
+    "Kick-start your career with hands-on experience and mentorship.",
+
+  points: [
+    "Real project experience",
+    "Mentorship from experienced professionals",
+    "Technology and design exposure",
+    "Performance-based career opportunities",
   ],
-  hiringSteps: [
-    {
-      number: "01",
-      title: "Apply Online",
-      text: "Submit your application through our careers page.",
-    },
-    {
-      number: "02",
-      title: "HR Screening",
-      text: "Our team will review your profile and connect with you.",
-    },
-    {
-      number: "03",
-      title: "Technical / Design Assessment",
-      text: "Showcase your skills through a relevant assessment.",
-    },
-    {
-      number: "04",
-      title: "Interview Rounds",
-      text: "Meet the team and discuss your experience, ideas and aspirations.",
-    },
-    {
-      number: "05",
-      title: "Offer & Onboarding",
-      text: "Receive your offer and join us on an exciting journey.",
-    },
-  ],
-  testimonials: [
-    {
-      quote:
-        "Vedixa empowers me to design experiences that truly make a difference. The team and culture are amazing.",
-      name: "Krupa P.",
-      role: "UI/UX Designer",
-    },
-    {
-      quote:
-        "The projects here are diverse and challenging. I grow my skills and confidence every day.",
-      name: "Harsh D.",
-      role: "Full Stack Developer",
-    },
-    {
-      quote:
-        "I love the freedom to experiment, innovate and bring ideas to life with the support of the team.",
-      name: "Neha S.",
-      role: "AI Engineer",
-    },
-    {
-      quote:
-        "A collaborative environment with a clear vision and strong leadership. Proud to be part of Vedixa.",
-      name: "Mehul A.",
-      role: "Architect",
-    },
-  ],
-  lifeImages: [
-    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=85",
-    "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=85",
-    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=85",
-    "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=85",
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=85",
-  ],
-  internshipPoints: [
-    "Work on real-world projects",
-    "Mentorship from industry experts",
-    "Learning & growth opportunities",
-    "Potential full-time opportunities",
-  ],
+
+  cardTitle: "Build. Learn. Grow.",
+
+  cardDescription:
+    "We welcome passionate students and freshers who are eager to learn, contribute and grow with us.",
+
+  CTA: {
+    label: "Explore Internships",
+    to: "/contact",
+  },
+};
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+export const careerCTA = {
+  title: "Grow with a Team That Builds Boldly",
+
+  description:
+    "If you're passionate about creating meaningful work and learning fast, Vedixa is a place to grow.",
+
+  primaryCTA: {
+    label: "Apply Now",
+    to: "/contact",
+  },
+
+  secondaryCTA: {
+    label: "Meet the Culture",
+    to: "/about",
+  },
 };
