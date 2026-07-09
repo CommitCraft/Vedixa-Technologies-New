@@ -4,6 +4,8 @@ import {
   ChartNoAxesCombined,
   Cloud,
   Code2,
+  Database,
+  DraftingCompass,
   Globe2,
   LayoutDashboard,
   MonitorSmartphone,
@@ -16,12 +18,37 @@ import {
   Users,
 } from "lucide-react";
 
+import { FaCss3Alt } from "react-icons/fa6";
+
+import { VscCode } from "react-icons/vsc";
+
+import {
+  SiDocker,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPhp,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTypescript,
+} from "react-icons/si";
+
+
 /* =========================================================
    HERO
 ========================================================= */
 
 export const homeHero = {
   title: "Technology, Architecture & Design Solutions",
+
   highlight: "that Build the Future",
 
   description:
@@ -53,6 +80,7 @@ export const homeHero = {
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=90",
 };
 
+
 /* =========================================================
    FEATURE STRIP
 ========================================================= */
@@ -63,27 +91,32 @@ export const homeHighlights = [
     text: "Concept to continuous support",
     icon: ShieldCheck,
   },
+
   {
     title: "Agile & Transparent",
     text: "Iterative delivery, full visibility",
-    icon: ShieldCheck,
+    icon: ChartNoAxesCombined,
   },
+
   {
     title: "Client-Centric Focus",
     text: "Quality, on-time, every time",
     icon: Users,
   },
+
   {
     title: "Future-Ready Approach",
     text: "Innovation meets reliability",
     icon: Sparkles,
   },
+
   {
     title: "Scalable & Secure",
     text: "Built for growth, secured by design",
     icon: ShieldCheck,
   },
 ];
+
 
 /* =========================================================
    IT & SOFTWARE SERVICES
@@ -95,46 +128,55 @@ export const softwareServices = [
     title: "Web Development",
     text: "Fast, secure and scalable websites and web applications.",
   },
+
   {
     icon: Smartphone,
     title: "Mobile App Development",
     text: "Native and cross-platform apps for iOS and Android.",
   },
+
   {
     icon: Code2,
     title: "Custom Software Development",
     text: "Tailor-made software that solves unique business problems.",
   },
+
   {
     icon: Cloud,
     title: "SaaS Product Development",
     text: "Scalable SaaS products from idea to market launch.",
   },
+
   {
     icon: PanelsTopLeft,
     title: "Enterprise Solutions",
     text: "ERP, CRM and business systems that drive enterprise efficiency.",
   },
+
   {
     icon: Palette,
     title: "UI/UX Design",
     text: "User-centered design that delights users and improves conversions.",
   },
+
   {
     icon: Bot,
     title: "AI Automation",
     text: "Intelligent automation to streamline workflows and operations.",
   },
+
   {
     icon: Cloud,
     title: "Cloud & DevOps",
     text: "Cloud-native solutions with CI/CD and deployment automation.",
   },
+
   {
     icon: ChartNoAxesCombined,
     title: "Data Analytics",
     text: "Turn data into insights with dashboards, analytics and reporting.",
   },
+
   {
     icon: ShoppingCart,
     title: "E-Commerce Solutions",
@@ -142,10 +184,12 @@ export const softwareServices = [
   },
 ];
 
+
 export const softwareServicesVisual = {
   image:
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85",
 };
+
 
 /* =========================================================
    SOFTWARE PRODUCTS
@@ -154,43 +198,57 @@ export const softwareServicesVisual = {
 export const digitalProducts = [
   {
     title: "ERP Dashboard",
+
     category: "Enterprise Resource Planning",
+
     description:
       "Real-time business analytics and operations dashboard.",
 
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
   },
+
   {
     title: "Mobile Banking App",
+
     category: "FinTech Application",
+
     description:
       "Secure and intuitive financial mobile experience.",
 
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=85",
   },
+
   {
     title: "Analytics Platform",
+
     category: "Business Intelligence",
+
     description:
       "Advanced analytics and dashboards for better decisions.",
 
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85",
   },
+
   {
     title: "E-commerce Admin",
+
     category: "Commerce Platform",
+
     description:
       "Complete admin panel to manage products, orders and users.",
 
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85",
   },
+
   {
     title: "AI Automation Dashboard",
+
     category: "Artificial Intelligence",
+
     description:
       "Automate workflows and improve productivity with AI.",
 
@@ -198,6 +256,7 @@ export const digitalProducts = [
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85",
   },
 ];
+
 
 /* =========================================================
    ARCHITECTURE
@@ -212,36 +271,45 @@ export const architectureCapabilities = [
   "Sustainable Design",
 ];
 
+
 export const architectureProjects = [
   {
     title: "Modern Villa",
+
     subtitle: "Residential Architecture",
 
     image:
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85",
   },
+
   {
     title: "Luxury Apartment",
+
     subtitle: "Interior Design",
 
     image:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85",
   },
+
   {
     title: "Corporate Office",
+
     subtitle: "Commercial Architecture",
 
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=85",
   },
+
   {
     title: "Retail Showroom",
+
     subtitle: "Interior Design",
 
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85",
   },
 ];
+
 
 /* =========================================================
    INTEGRATED DESIGN & BUILD
@@ -255,6 +323,7 @@ export const integratedProcess = [
   "Support & Optimize",
 ];
 
+
 export const integratedBenefits = [
   "Better collaboration",
   "Faster time to market",
@@ -262,8 +331,10 @@ export const integratedBenefits = [
   "Consistent quality",
 ];
 
+
 export const integratedProcessImage =
   "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85";
+
 
 /* =========================================================
    STATS
@@ -275,21 +346,25 @@ export const homeStats = [
     label: "Projects Completed",
     icon: LayoutDashboard,
   },
+
   {
     number: "250+",
     label: "Happy Clients",
     icon: Users,
   },
+
   {
     number: "8+",
     label: "Years Experience",
     icon: Sparkles,
   },
+
   {
     number: "60+",
     label: "Expert Professionals",
     icon: MonitorSmartphone,
   },
+
   {
     number: "98%",
     label: "Client Satisfaction",
@@ -297,33 +372,138 @@ export const homeStats = [
   },
 ];
 
+
 /* =========================================================
-   TECHNOLOGY STACK
+   TECHNOLOGY STACK WITH LOGOS
 ========================================================= */
 
 export const technologyStack = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "PHP",
-  "Laravel",
-  "Python",
-  "MySQL",
-  "MongoDB",
-  "AWS",
-  "Firebase",
-  "Figma",
-  "Git",
-  "Docker",
-  "PostgreSQL",
-  "AutoCAD",
-  "Revit",
-  "SketchUp",
+  {
+    name: "HTML5",
+    logo: SiHtml5,
+  },
+
+  {
+    name: "CSS3",
+    logo: FaCss3Alt,
+  },
+
+  {
+    name: "JavaScript",
+    logo: SiJavascript,
+  },
+
+  {
+    name: "TypeScript",
+    logo: SiTypescript,
+  },
+
+  {
+    name: "React",
+    logo: SiReact,
+  },
+
+  {
+    name: "Next.js",
+    logo: SiNextdotjs,
+  },
+
+  {
+    name: "Node.js",
+    logo: SiNodedotjs,
+  },
+
+  {
+    name: "PHP",
+    logo: SiPhp,
+  },
+
+  {
+    name: "Laravel",
+    logo: SiLaravel,
+  },
+
+  {
+    name: "Python",
+    logo: SiPython,
+  },
+
+  {
+    name: "MySQL",
+    logo: SiMysql,
+  },
+
+  {
+    name: "MongoDB",
+    logo: SiMongodb,
+  },
+
+  {
+    name: "AWS",
+    logo: Cloud,
+  },
+
+  {
+    name: "Firebase",
+    logo: SiFirebase,
+  },
+
+  {
+    name: "Figma",
+    logo: Palette,
+  },
+
+  {
+    name: "Git",
+    logo: SiGit,
+  },
+
+  {
+    name: "GitHub",
+    logo: SiGithub,
+  },
+
+  {
+    name: "Docker",
+    logo: SiDocker,
+  },
+
+  {
+    name: "PostgreSQL",
+    logo: SiPostgresql,
+  },
+
+  {
+    name: "VS Code",
+    logo: VscCode,
+  },
+
+  {
+    name: "AutoCAD",
+    logo: DraftingCompass,
+  },
+
+  {
+    name: "Revit",
+    logo: Building2,
+  },
+
+  {
+    name: "SketchUp",
+    logo: PanelsTopLeft,
+  },
+
+  {
+    name: "Cloud Architecture",
+    logo: Cloud,
+  },
+
+  {
+    name: "Database Design",
+    logo: Database,
+  },
 ];
+
 
 /* =========================================================
    DEVELOPMENT PROCESS
@@ -332,35 +512,50 @@ export const technologyStack = [
 export const deliveryProcess = [
   {
     number: "01",
+
     title: "Discover",
+
     description:
       "We understand your business, goals and challenges.",
   },
+
   {
     number: "02",
+
     title: "Strategy & Planning",
+
     description:
       "We define the roadmap, priorities and solution approach.",
   },
+
   {
     number: "03",
+
     title: "Design",
+
     description:
       "We create intuitive UI/UX and robust system designs.",
   },
+
   {
     number: "04",
+
     title: "Develop",
+
     description:
       "We build, test and iterate with quality and clean code.",
   },
+
   {
     number: "05",
+
     title: "Deploy & Support",
+
     description:
       "We deploy seamlessly and provide ongoing support.",
   },
 ];
+
 
 /* =========================================================
    FINAL CTA
